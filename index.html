@@ -1,0 +1,99 @@
+<!doctype HTML>
+<html>
+  <head>
+  	<title>Model Viewer Demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  	<style>
+  		@font-face {
+				font-family: wf_388fbdd61c8a4054a27608edf;
+				src: url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/woff2/file.woff2") format("woff2"),
+				url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/woff/file.woff") format("woff"),
+				url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/ttf/file.ttf") format("ttf");
+			} @font-face {
+				font-family: wf_388fbdd61c8a4054a27608edf;
+				src: url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/woff2/file.woff2") format("woff2"),
+				url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/woff/file.woff") format("woff"),
+				url("https://static.wixstatic.com/ufonts/c42fea_388fbdd61c8a4054a27608edf33761e2/ttf/file.ttf") format("ttf");
+			}
+  		h1 {
+  			color: rgb(255, 255, 255);
+				font-family: wfont_c42fea_388fbdd61c8a4054a27608edf33761e2,wf_388fbdd61c8a4054a27608edf,orig_biome_w_01_regular;
+  		}
+  		.form-button {
+  			transition: color 0.4s ease 0s;
+				color: #FFFFFF;
+				background-color: rgb(38, 68, 121);
+				border: 2px solid transparent;
+				padding: .75rem 1.5rem;
+				border-radius: .5rem;
+				font-family: wfont_c42fea_388fbdd61c8a4054a27608edf33761e2,wf_388fbdd61c8a4054a27608edf,orig_biome_w_01_regular;
+  		}
+  	</style>
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+  	<form style="z-index: 2000000; margin-left: 25%; margin-top: 20%;">
+  		<h1 class="form-button" style="width: 26%; min-width: 350px;">Your echoAR API Key:</h1>
+  		<input type="text" class="form-button" name="key" style="font-size: 16px; width: 20%; ">
+  		<button class="form-button" type="submit" id="key" style="height: 5%; width: 12%; min-width: 100px;"><h1 style="font-size: 16px;">Submit</h1></button>
+  	</form>
+  		<select id="modelsDropdown" class="form-button dropdown" style="font-size: 16px; margin-left: 25%; padding: 5px;font-family: wfont_c42fea_388fbdd61c8a4054a27608edf33761e2,wf_388fbdd61c8a4054a27608edf,orig_biome_w_01_regular;
+"></select>
+  	<a-scene embedded arjs>
+			<a-marker preset="hiro">      
+	  			<a-entity>
+	  				<!-- potentiall insert animations here -->
+	  			</a-entity>
+			</a-marker>
+	</a-scene>
+	<script>
+		const urlForm = window.location.search;
+		const apiKey = urlForm.substring(urlForm.indexOf('=')+1, urlForm.length);
+		document.getElementsByName('key')[0].value = apiKey;
+
+		let holograms = {};
+		let hologramNames = [];
+
+		fetch("https://console.echoar.xyz//query?key="+apiKey).then(res => res.json()).then((out) => {
+	    for (key in out['db']) {
+	    	for (entry in out['db'][key]) {
+    			if ('glbHologramStorageFilename' in out['db'][key]['additionalData']) {
+    				holograms[out['db'][key]['hologram']['filename']] = out['db'][key]['additionalData']['glbHologramStorageID'];
+    			} else {
+    				holograms[out['db'][key]['hologram']['filename']] = out['db'][key]['hologram']['storageID'];
+    			}
+	    	}
+	    }
+	 		const hologramNames = Object.keys(holograms);
+	 		const select = document.getElementById("modelsDropdown");
+	    for (let i = 0; i < hologramNames.length; i++) {
+        var optn = hologramNames[i];
+        var el = document.createElement("option");
+        el.textContent = optn;
+        el.value = optn;
+        select.appendChild(el);
+	    }
+	    const storageID = holograms[select.value];
+	  	const modelFileLink = "https://console.echoar.xyz//query?key="
+							  + apiKey + "&file="  + storageID;
+			const entityHTML = document.querySelector('a-entity');
+		 	entityHTML.setAttribute("gltf-model", modelFileLink);
+		 	console.log(select.value + " loaded!");
+	    select.addEventListener("change", (event) => {
+    		const storageID = holograms[select.value];
+		  	const modelFileLink = "https://console.echoar.xyz//query?key="
+								  + apiKey + "&file="  + storageID;
+				const entityHTML = document.querySelector('a-entity');
+			 	entityHTML.setAttribute("gltf-model", modelFileLink);
+			 	console.log(select.value + " loaded!");
+	    });
+		}).catch(err => {
+			document.getElementById("modelsDropdown").style.display = "none";
+			if (apiKey !== "") {
+				alert('Invalid key!');
+		    throw err;
+		  }
+		});
+	</script>
+  </body>
+</html>
