@@ -33,3 +33,4 @@ Feel free to reach out at [support@echoAR.xyz](mailto:support@echoAR.xyz) or joi
 ## Screenshots
 ![screenshot](/screenshots/screenshot.png)
 
+Demo created by [Ivan Viro](https://github.com/ivan-v/).
