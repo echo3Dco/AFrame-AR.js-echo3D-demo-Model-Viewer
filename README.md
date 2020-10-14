@@ -1,5 +1,5 @@
 # AFrame-AR.js-echoAR-demo-Model-Viewer
-An in-browser AR viewer of models from an echoAR console key, using AR.js and A-Frame. 
+An in-browser AR viewer of models from an echoAR console/ key, using AR.js and A-Frame. 
 
 ## Register
 
@@ -33,3 +33,4 @@ Feel free to reach out at [support@echoAR.xyz](mailto:support@echoAR.xyz) or joi
 ## Screenshots
 ![screenshot](/screenshots/screenshot.png)
 
+Demo created by [Ivan Viro](https://github.com/ivan-v/).
