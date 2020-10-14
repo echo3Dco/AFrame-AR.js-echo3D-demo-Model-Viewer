@@ -1,6 +1,10 @@
 # AFrame-AR.js-echoAR-demo-Model-Viewer
 An in-browser AR viewer of models from an echoAR console key, using AR.js and A-Frame. 
 
+## Register
+
+Don't have an API key? Make sure to register for FREE at [echoAR](https://console.echoar.xyz/#/auth/register).
+
 ## Viewer Instructions
 * The viewer needs a marker, which is by default the [Hiro marker](https://3.bp.blogspot.com/-_rXmUhrNCt8/W0YImGVS1UI/AAAAAAAAECk/5uR-aSWdyx08jxRpRili6_B8D7NiCNHiQCLcBGAs/s320/hiro.png)
 
@@ -9,9 +13,6 @@ An in-browser AR viewer of models from an echoAR console key, using AR.js and A-
 * Pull it up on your phone or print it out, and then show it to the camera. Your model should load slightly underneath it. 
 * You can create your own marker [here](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html). 
 * Or use NFT (natural feature tracking) by AR.js when it becomes more reliable with time.
-
-## Register
-* If you don't have an echoAR API key yet, make sure to register for FREE at [echoAR](https://console.echoar.xyz/#/auth/register).
 
 ## Setup
 [Add 3D models](https://docs.echoar.xyz/quickstart/add-a-3d-model) to the console.
