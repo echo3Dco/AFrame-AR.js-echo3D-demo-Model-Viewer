@@ -1,9 +1,9 @@
-# AFrame-AR.js-echoAR-demo-Model-Viewer
-An in-browser AR viewer of models from an echoAR console key, using AR.js and A-Frame. 
+# AFrame-AR.js-echo3D-demo-Model-Viewer
+An in-browser AR viewer of models from an echo3D console key, using AR.js and A-Frame. 
 
 ## Register
 
-Don't have an API key? Make sure to register for FREE at [echoAR](https://console.echoar.xyz/#/auth/register).
+Don't have an API key? Make sure to register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
 
 ## Viewer Instructions
 * The viewer needs a marker, which is by default the [Hiro marker](https://3.bp.blogspot.com/-_rXmUhrNCt8/W0YImGVS1UI/AAAAAAAAECk/5uR-aSWdyx08jxRpRili6_B8D7NiCNHiQCLcBGAs/s320/hiro.png)
@@ -15,7 +15,7 @@ Don't have an API key? Make sure to register for FREE at [echoAR](https://consol
 * Or use NFT (natural feature tracking) by AR.js when it becomes more reliable with time.
 
 ## Setup
-[Add 3D models](https://docs.echoar.xyz/quickstart/add-a-3d-model) to the console.
+[Add 3D models](https://docs.echo3D.co/quickstart/add-a-3d-model) to the console.
 
 ## Run
 * Run locally or using a web server.
@@ -25,10 +25,10 @@ Don't have an API key? Make sure to register for FREE at [echoAR](https://consol
 Add/remove/edit models in the console and notice that the interactive models in the site change on reload.
 
 ## Learn more
-Refer to our [documentation](https://docs.echoar.xyz/unity/) to learn more about how to use AR.js and echoAR.
+Refer to our [documentation](https://docs.echo3D.co/unity/) to learn more about how to use AR.js and echo3D.
 
 ## Support
-Feel free to reach out at [support@echoAR.xyz](mailto:support@echoAR.xyz) or join our [support channel on Slack](https://join.slack.com/t/echoar/shared_invite/enQtNTg4NjI5NjM3OTc1LWU1M2M2MTNlNTM3NGY1YTUxYmY3ZDNjNTc3YjA5M2QyNGZiOTgzMjVmZWZmZmFjNGJjYTcxZjhhNzk3YjNhNjE). 
+Feel free to reach out at [support@echo3D.co](mailto:support@echo3D.co) or join our [support channel on Slack](https://go.echo3D.co/join). 
 
 ## Screenshots
 ![screenshot](/screenshots/screenshot.png)
