@@ -54,7 +54,7 @@
 		let holograms = {};
 		let hologramNames = [];
 
-		fetch("https://console.echoar.xyz//query?key="+apiKey).then(res => res.json()).then((out) => {
+		fetch("https://api.echo3D.com//query?key="+apiKey).then(res => res.json()).then((out) => {
 	    for (key in out['db']) {
 	    	for (entry in out['db'][key]) {
     			if ('glbHologramStorageFilename' in out['db'][key]['additionalData']) {
@@ -74,14 +74,14 @@
         select.appendChild(el);
 	    }
 	    const storageID = holograms[select.value];
-	  	const modelFileLink = "https://console.echoar.xyz//query?key="
+	  	const modelFileLink = "https://api.echo3D.com//query?key="
 							  + apiKey + "&file="  + storageID;
 			const entityHTML = document.querySelector('a-entity');
 		 	entityHTML.setAttribute("gltf-model", modelFileLink);
 		 	console.log(select.value + " loaded!");
 	    select.addEventListener("change", (event) => {
     		const storageID = holograms[select.value];
-		  	const modelFileLink = "https://console.echoar.xyz//query?key="
+		  	const modelFileLink = "https://api.echo3D.com//query?key="
 								  + apiKey + "&file="  + storageID;
 				const entityHTML = document.querySelector('a-entity');
 			 	entityHTML.setAttribute("gltf-model", modelFileLink);
