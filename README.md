@@ -6,7 +6,6 @@ An in-browser AR viewer of models from an echo3D console key, using AR.js and A-
 Don't have an API key? Make sure to register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
 
 ## Setup
-* Built with Unity 2020.3.25.  _(Note: The echo3D Unity SDK is supported in 2020.3.25 and higher.)_
 * Register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
 * The viewer needs a marker so save it on your phone or print it out. By default the marker is the Hiro image [Hiro marker](https://3.bp.blogspot.com/-_rXmUhrNCt8/W0YImGVS1UI/AAAAAAAAECk/5uR-aSWdyx08jxRpRili6_B8D7NiCNHiQCLcBGAs/s320/hiro.png).
 * Clone this repo to view a sample project. All you have to do is add your project's API key when prompted on the screen.
