@@ -2,8 +2,10 @@
 An in-browser AR viewer of models from an echo3D console key, using AR.js and A-Frame. 
 
 ## Register
-
 Don't have an API key? Make sure to register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
+
+## Video
+View [here](https://www.youtube.com/embed/0yAz-BjmnqA).
 
 ## Setup
 * Register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
